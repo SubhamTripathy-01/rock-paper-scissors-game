@@ -10,7 +10,6 @@ const lose = document.querySelector("#lost");
 const draw = document.querySelector("#draw");
 
 const drawGame = () => {
-    console.log("It's a draw");
     msg.innerText = "It's a draw. play Again!";
     msg.style.backgroundColor = "#1a2550";
     drawScore++;
@@ -19,13 +18,11 @@ const drawGame = () => {
 
 const showWinner = (userWin,userChoice,computerChoice) => {
     if(userWin){
-        console.log("You win !!");
         msg.innerText=`You win !! Yours ${userChoice} beats ${computerChoice}`;
         msg.style.backgroundColor = "green";
         winScore++;
         win.innerText = winScore;
     }else{
-        console.log("You loose :) ")
         msg.innerText = `You Loose !! ${computerChoice} beats Yours ${userChoice}`;
         msg.style.backgroundColor = "red";
         loseScore++;
@@ -39,10 +36,8 @@ const genComputerChoice = () => {
     return option[randomIndex];
 }
 
-const playGame = (userChoice) =>{
-    console.log("users choice = ", userChoice);
+const playGame = (userChoice) => {
     const computerChoice = genComputerChoice();
-    console.log("computer choice = ",computerChoice);
     if(userChoice === computerChoice){
         drawGame();
     }else{
